@@ -1,0 +1,44 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Hello, {{user.firstname}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content>
+  <ion-item no-lines>
+    <ion-avatar class="profileAvatar">
+      <img class="profilePic" src="data:image/jpeg;base64,{{pic}}" alt="{{pic}}">
+    </ion-avatar>
+  </ion-item>
+  <ion-item no-lines>
+    <button class="acc-btn" ion-button block (click)="editProfile()">Edit Profile</button>
+  </ion-item>
+  <ion-item no-lines>
+    <button class="acc-btn" ion-button block (click)="startSwiping()">Start Swiping</button>
+  </ion-item>
+  <ion-item no-lines>
+    <button class="acc-btn" ion-button block (click)="likedPeople()">People you liked</button>
+  </ion-item>
+  <ion-item no-lines>
+    <button class="acc-btn" ion-button block (click)="ongoingConv()">Ongoing Conversations</button>
+  </ion-item>
+
+  <ion-list>
+    <ion-item>
+      <ion-label>
+        {{user.firstname}} {{user.lastname}}, {{age}}
+      </ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{user.birthday}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{user.gender}}</ion-label>
+    </ion-item>
+    <ion-item>
+      <ion-label>{{user.bio}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

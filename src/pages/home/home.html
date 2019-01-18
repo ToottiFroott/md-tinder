@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Tinder App
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <br />
+  <ion-list>
+    <ion-item>
+      <ion-label>User name</ion-label>
+      <ion-input text-right type="text" [(ngModel)]='username'></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input text-right type="Password" [(ngModel)]='password'></ion-input>
+    </ion-item>
+  </ion-list>
+  <br />
+  <button round ion-button block (click)='login(username, password)'>Login</button>
+  <button round ion-button block (click)='createProfile()'>Create new Profile</button>
+  <ion-list>
+    <ion-item *ngFor="let user of tinUsers" (click)="showProfile(user)">
+      
+      <img src="data:image/jpeg;base64,{{user.doc._attachments.profilePic.data}}" alt="">
+      
+      {{user.doc.firstname}} {{user.doc.lastname}}
+    </ion-item>
+  </ion-list>
+</ion-content>

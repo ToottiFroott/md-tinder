@@ -1,0 +1,16 @@
+page-my-account {
+    .acc-btn {
+        height: 100% !important;
+        min-height: 50px;
+    }
+    .profileAvatar {
+        display: flex;
+        justify-content: center;
+        .profilePic {
+            width: 100% !important;
+            height: 100% !important;
+            max-width: 200px;
+            max-height: 200px;
+        }
+    }
+}

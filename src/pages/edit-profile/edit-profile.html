@@ -1,0 +1,46 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Edit Profile</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item no-lines>
+      <ion-avatar class="profileAvatar">
+        <img class="profilePic" src="data:image/jpeg;base64,{{pic}}" alt="{{pic}}">
+      </ion-avatar>
+    </ion-item>
+    <ion-item no-lines>
+      <ion-label>Username</ion-label>
+      <ion-input text-right type="text" [(ngModel)]='editUser.username'></ion-input>
+    </ion-item>
+    <ion-item no-lines>
+      <ion-label>Password</ion-label>
+      <ion-input text-right type="text" [(ngModel)]='editUser.password'></ion-input>
+    </ion-item>
+    <ion-item no-lines>
+      <ion-label>Firstname</ion-label>
+      <ion-input text-right type="text" [(ngModel)]='editUser.firstname'></ion-input>
+    </ion-item>
+    <ion-item no-lines>
+      <ion-label>Lastname</ion-label>
+      <ion-input text-right type="text" [(ngModel)]='editUser.lastname'></ion-input>
+    </ion-item>
+    <ion-item no-lines>
+      <ion-label>Birthday</ion-label>
+      <ion-input text-right type="text" [(ngModel)]='editUser.birthday'></ion-input>
+    </ion-item>
+    <ion-item no-lines>
+      <ion-label>Gender</ion-label>
+      <ion-input text-right type="text" [(ngModel)]='editUser.gender'></ion-input>
+    </ion-item>
+    <ion-item no-lines>
+      <ion-label>Bio</ion-label>
+      <ion-input text-right type="text" [(ngModel)]='editUser.bio'></ion-input>
+    </ion-item>
+  </ion-list>
+  <button ion-button block (click)="updateProfile()">Update Profile</button>
+</ion-content>

@@ -1,0 +1,24 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Like or Dislike?</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-card *ngFor="let user of displayUsers; let i = index" (click)="showProfile" (swipe)="swiped($event, i)" class="profile-card">
+    <img src="data:image/jpeg;base64,{{user['_attachments']['profilePic']['data']}}" alt="">
+    <ion-card-content (click)="showProfile(user)">
+      <ion-card-title>
+        {{user['firstname']}}, {{currentYear - user['birthday'].substring(0,4)}}
+      </ion-card-title>
+      <p>
+        {{user['birthday']}}<br>
+        {{user['gender']}}<br>
+        {{user['bio']}}<br>
+      </p>
+    </ion-card-content>
+  </ion-card>
+</ion-content>

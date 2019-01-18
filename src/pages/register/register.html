@@ -1,0 +1,50 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Tinder App
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-list>
+    <ion-item>
+      <ion-label>User name</ion-label>
+      <ion-input text-right type="text" [(ngModel)]='tinUser.username'></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Password</ion-label>
+      <ion-input text-right type="Password" [(ngModel)]='tinUser.password'></ion-input>
+    </ion-item>
+    <ion-item>
+      <img width="300" src="data:image/jpeg;base64,{{this.profilePicture}}" alt="profile picture" *ngIf="profilePicture" />
+      <br />
+      <button ion-button (click)="uploadPicture()">Upload Picture</button>
+      <!--<button ion-button (click)="cropPicture()">Crop Picture</button>-->
+    </ion-item>
+    <ion-item>
+      <ion-label>First name</ion-label>
+      <ion-input text-right type="text" [(ngModel)]='tinUser.firstname'></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Last name</ion-label>
+      <ion-input text-right type="text" [(ngModel)]='tinUser.lastname'></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Birthday</ion-label>
+      <ion-datetime text-right displayFormat='MM/DD/YYYY' placeholder="" [(ngModel)]='tinUser.birthday'></ion-datetime>
+    </ion-item>
+    <ion-item>
+      <ion-label>Gender</ion-label>
+      <ion-select [(ngModel)]='tinUser.gender'>
+        <ion-option value="female">Female</ion-option>
+        <ion-option value="male">Male</ion-option>
+      </ion-select>
+    </ion-item>
+    <ion-item>
+      <ion-label>Bio</ion-label>
+      <ion-textarea text-right type="text" [(ngModel)]='tinUser.bio'></ion-textarea>
+    </ion-item>
+  </ion-list>
+  <button round ion-button (click)='createProf()'>Create Profile</button>
+</ion-content>
